@@ -10,16 +10,22 @@ class ItemsController < ApplicationController
   #     @items = items.creat()
   # end
   def create
-      @items = Item.new(items_params)
-      @items.save
+      @item = Item.new(item_params)
+      @item.user_id = current_user.id
+      if @item.save
+        redirect_to items_path(@items)
+      else
+        render :new
+      end
+  end
 
-      # no need for app/views/restaurants/create.html.erb
-      redirect_to items_path(@items)
+  def edit
+    @item = Item.find(params[:id])
   end
 
   private
 
-  def items_params
-      params.require(:items).permit(:id)
+  def item_params
+      params.require(:item).permit(:picture_url, :price, :deposit, :category, :name, :address)
   end
 end
