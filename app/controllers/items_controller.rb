@@ -12,14 +12,15 @@ class ItemsController < ApplicationController
   def create
       @item = Item.new(item_params)
       @item.user_id = current_user.id
-      @item.save
-
-      redirect_to items_path(@items)
+      if @item.save
+        redirect_to items_path(@items)
+      else
+        render :new
   end
 
   private
 
   def item_params
-      params.require(:item).permit(:id, :picture_url, :price, :deposit, :category, :name)
+      params.require(:item).permit(:picture_url, :price, :deposit, :category, :name)
   end
 end
