@@ -1,9 +1,14 @@
+<div class="card-wrapper">
 <% @items.each do |item| %>
-<%= item.name %>
-<%= item.category %>
-<%= item.price %>
-<%= item.deposit %>
-<%= item.user_id %>
-<img src="<%= item.picture_url %>">
-<br>
+<div class="card-product">
+  <img src="<%= item.picture_url %>"></a>
+  <h2><%= item.name %></h2>
+  <div class="card-product-infos">
+    <p>Category: <%= item.category %></p>
+    <p>Price/day: <%= item.price %></p>
+    <p>Deposit: <%= item.deposit %></p>
+    <p>User: <%= item.user.first_name %> <%= item.user.last_name %></p>
+  </div>
+</div>
 <% end %>
+</div>
