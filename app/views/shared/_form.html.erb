@@ -1,0 +1,15 @@
+<%= simple_form_for @item do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :category %>
+  <%= f.input :category, collection: ["house appliances", "electronics", "clothes", "sports"] %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.label :deposit %>
+  <%= f.number_field :deposit %>
+  <%= f.label :address %>
+  <%= f.input :address, collection: ["Jingan", "Minhang", "Pudong", "Hongkou"] %>
+  <%= f.label :picture_url %>
+  <%= f.text_field :picture_url %>
+  <%= f.submit %>
+<% end %>
