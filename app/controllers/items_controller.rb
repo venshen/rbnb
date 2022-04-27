@@ -3,12 +3,9 @@ class ItemsController < ApplicationController
       @items = Item.all
   end
   def new
-      @items = Item.new
+      @item = Item.new
   end
 
-  # def creat
-  #     @items = items.creat()
-  # end
   def create
       @item = Item.new(item_params)
       @item.user_id = current_user.id
