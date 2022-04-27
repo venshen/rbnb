@@ -3,6 +3,6 @@ class BookingsController < ApplicationController
         user = current_user
         @bookings = user.bookings
     end
-    
-    
+
+
 end
