@@ -16,6 +16,11 @@ class ItemsController < ApplicationController
         redirect_to items_path(@items)
       else
         render :new
+      end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
   end
 
   private
