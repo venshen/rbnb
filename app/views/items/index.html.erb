@@ -1,0 +1,9 @@
+<% @items.each do |item| %>
+<%= item.name %>
+<%= item.category %>
+<%= item.price %>
+<%= item.deposit %>
+<%= item.user_id %>
+<img src="<%= item.picture_url %>">
+<br>
+<% end %>
