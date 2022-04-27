@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :new, :create ]
 
   end
+
   # get  "items",     to: "items#index"
   # get  "items/new", to: "items#new"
   # post "items",     to: "items#create"
