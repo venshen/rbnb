@@ -1,3 +1,4 @@
+
 <h2><%= @item.name%></h2>
 <img src="<%= @item.picture_url%>" alt="" style="width: 100px">
 <p>Created at: <%= @item.created_at%></p>
@@ -15,17 +16,5 @@
      data-markers="<%= @marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
-
-
-
-<%# t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "picture_url"
-    t.text "address"
-    t.float "price"
-    t.float "deposit"
-    t.bigint "user_id", null: false
-    t.text "category"
-    t.text "name"
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end %>
+<%= link_to "Book this item", new_item_booking_path(@item) %>
+<%= link_to "Back to item page", items_path %>

@@ -1,7 +1,8 @@
+<%= link_to "Show all my bookings", bookings_path %>
 <div class="card-wrapper">
 <% @items.each do |item| %>
 <div class="card-product">
-  <img src="<%= item.picture_url %>"></a>
+  <a href="<%= item_url(item) %>"><%= image_tag(item.picture_url) %></a>
   <h2><%= item.name %></h2>
   <div class="card-product-infos">
     <p>Category: <%= item.category %></p>
