@@ -1,0 +1,11 @@
+<h2><%= @user.first_name %></h2>
+<p><%= @user.location %></p>
+<p><%= @user.email %></p>
+<% @user.items.each do |item|%>
+    <a href="<%= item_url(item) %>"><%= image_tag(item.picture_url) %></a>
+    <p>Category: <%= item.category %></p>
+    <p>Price/day: <%= item.price %></p>
+    <p>Deposit: <%= item.deposit %></p>
+    <p>User: <%= item.user.first_name %> <%= item.user.last_name %></p>
+
+<% end %>
