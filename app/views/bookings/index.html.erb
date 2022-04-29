@@ -1,4 +1,9 @@
 <h1>You can see all my bookings here</h1>
-
-
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.item_id %></li>
+    <li><%= booking.booking_start %></li>
+    <li><%= booking.booking_end %></li>
+  <% end %>
+</ul>
 
