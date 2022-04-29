@@ -1,14 +1,23 @@
-<div class="card-wrapper">
+<%= render 'shared/hero' %>
+<h2 class="mx-5 my-3">See What Items are Available Near You</h2>
+<div class="card-menu">
+<div class="card-wrapper mx-5">
 <% @items.each do |item| %>
-<div class="card-product">
-  <img src="<%= item.picture_url %>"></a>
-  <h2><%= item.name %></h2>
-  <div class="card-product-infos">
-    <p>Category: <%= item.category %></p>
-    <p>Price/day: <%= item.price %></p>
-    <p>Deposit: <%= item.deposit %></p>
-    <p>User: <%= item.user.first_name %> <%= item.user.last_name %></p>
+  <div class="card-product">
+    <img src="<%= item.picture_url %>"></a>
+    <h2 class="text-primary"> <%= item.name %></h2>
+    <div class="card-product-infos">
+      <p class="text-primary">Category: <%= item.category %></p>
+      <p>Price/day: <%= item.price %></p>
+      <p>Deposit: <%= item.deposit %></p>
+      <div>
+
+      <p><i class="fas fa-user fa-xs"></i> <%= item.user.first_name %> <%= item.user.last_name %></p>
+      </div>
+    </div>
   </div>
-</div>
 <% end %>
+<div class="block"></div>
+<%= paginate @items %>
+</div>
 </div>
