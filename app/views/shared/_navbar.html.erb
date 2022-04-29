@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon my-2">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "logo.jpg" %>
     <% end %>
     <%# <%= link_to "book a flat" flats_path(@flat) %>
@@ -18,7 +18,11 @@
             <%= link_to "Browse", "/", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My bookings", "/#{current_user.id}/bookings", class: "nav-link" %>
+            <%= link_to "My bookings", bookings_path, class: "nav-link"%>
+
+
+
+
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "user-icon", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -1,11 +1,27 @@
-<h1>You can see all my bookings here</h1>
+<h1>Your booking history</h1>
+
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.item_id %></li>
-    <li><%= booking.booking_start %></li>
-    <li><%= booking.booking_end %></li>
+    <li>You started renting this item on: <%= booking.booking_start %></li>
+    <li>and you should return it on:<%= booking.booking_end %></li>
   <% end %>
 </ul>
 
-<%= link_to "Go to items page", items_path %>
+<div class="card-menu">
+<div class="card-wrapper mx-5">
+<% @bookings.each do |booking| %>
+  <div class="card-product">
+    <%= image_tag(booking.item.picture_url) %>
+    <h2 class="text-primary"> <%= booking.item.name %></h2>
+    <div class="card-product-infos">
+    <p>You started renting this item on: <strong><%= booking.booking_start %></strong>, and you should return it on <strong> <%= booking.booking_end %></strong>. In total, you booked <%= booking.item.name %> for <%= (booking.booking_end - booking.booking_start).to_i%> days.</p>
+      <p>Total cost: <%= (booking.booking_end - booking.booking_start).to_i * booking.item.price %> USD</p>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>
 
+
+
+<%= link_to "Go to items page", items_path %>
