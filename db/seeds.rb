@@ -21,7 +21,7 @@ User.create!(
   email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  location: ["Jingan", "Minhang", "Pudong", "Hongkou"].sample,
+  location: ["Jingan, China", "Minhang, China", "Pudong, China", "Hongkou, China"].sample,
   profile_img: Faker::Avatar.image(size: "50x50"),
   password: "tester123"
 )

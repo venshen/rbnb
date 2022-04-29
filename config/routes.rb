@@ -11,10 +11,4 @@ Rails.application.routes.draw do
 
   end
 
-  # get  "items",     to: "items#index"
-  # get  "items/new", to: "items#new"
-  # post "items",     to: "items#create"
-  # get "items/:id/edit",     to: "items#edit"
-  # post "items/:id/bookings", to:"bookings#create"
-  # get  "bookings",  to: "bookings#index"
 end
