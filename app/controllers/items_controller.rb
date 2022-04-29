@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :index, :create, :edit]
+  before_action :find_item, only: [:show,  :create, :edit]
   def index
       @items = Item.all
   end
