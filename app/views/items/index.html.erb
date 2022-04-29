@@ -1,10 +1,11 @@
 <%= render 'shared/hero' %>
+<%= link_to "Show all my bookings", bookings_path %>
 <h2 class="mx-5 my-3">See What Items are Available Near You</h2>
 <div class="card-menu">
 <div class="card-wrapper mx-5">
 <% @items.each do |item| %>
   <div class="card-product">
-    <img src="<%= item.picture_url %>"></a>
+    <a href="<%= item_url(item) %>"><%= image_tag(item.picture_url) %></a>
     <h2 class="text-primary"> <%= item.name %></h2>
     <div class="card-product-infos">
       <p class="text-primary">Category: <%= item.category %></p>
