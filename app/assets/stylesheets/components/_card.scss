@@ -1,3 +1,4 @@
+
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -18,6 +19,7 @@
   height: 100%;
   width: 120px;
   object-fit: cover;
+  padding-right: 10px;
 }
 
 .card-product h2 {
