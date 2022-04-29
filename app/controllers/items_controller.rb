@@ -1,12 +1,15 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [:show, :index, :create, :edit]
   def index
       @items = Item.all
   end
+
   def new
       @item = Item.new
   end
+
   def show
-    @item = Item.find(params[:id])
+    @marker = User.geocoded.find(@item.user_id)
   end
 
   def create
@@ -20,12 +23,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   private
 
   def item_params
-      params.require(:item).permit(:picture_url, :price, :deposit, :category, :name, :address)
+    params.require(:item).permit(:picture_url, :price, :deposit, :category, :name, :address)
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
